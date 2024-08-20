@@ -4,7 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_blurhash/flutter_blurhash.dart';
 
-typedef DecoderCallback = Future<ui.Codec> Function(Uint8List buffer,
+typedef DecoderCallback1 = Future<ui.Codec> Function(Uint8List buffer,
     {int? cacheWidth, int? cacheHeight, bool allowUpscaling});
 
 const _DEFAULT_SIZE = 32;
@@ -221,7 +221,7 @@ class UiImage extends ImageProvider<UiImage> {
       SynchronousFuture<UiImage>(this);
 
   @override
-  ImageStreamCompleter load(UiImage key, DecoderCallback decode) =>
+  ImageStreamCompleter load(UiImage key, DecoderCallback1 decode) =>
       OneFrameImageStreamCompleter(_loadAsync(key));
 
   Future<ImageInfo> _loadAsync(UiImage key) async {
